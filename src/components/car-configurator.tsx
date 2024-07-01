@@ -174,10 +174,11 @@ const CarConfigurator: React.FC = () => {
                 <div>
                     <h2 className="text-foreground text-lg font-bold mt-4">View Mode</h2>
                     <div className="flex items-center space-x-2 mt-4 mx-auto p-4 mb-4">
-                        <Switch id="view-mode"
-                            onChange={() => handleInteriorViewChange(true)}
+                        <Switch
+                            id="view-mode"
+                            onCheckedChange={(checked) => handleInteriorViewChange(checked)}
                         />
-                        <label htmlFor="view-mode" className="text-sm font-medium text-gray-700">
+                        <label htmlFor="view-mode" className="text-sm font-semibold text-foreground">
                             Interior View
                         </label>
                     </div>
