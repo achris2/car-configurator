@@ -11,7 +11,7 @@ const ColourSelector: React.FC<ColorSelectorProps> = ({ selectedColor, onColorCh
 
   return (
     <div className="w-full">
-      <h3 className="text-xl mb-2 text-center">Choose Color</h3>
+      <h3 className="text-md font-medium py-2 text-center">Vehicle Colour</h3>
       <div className="flex justify-center space-x-2">
         {colors.map((color) => (
           <Button 

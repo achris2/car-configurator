@@ -12,7 +12,7 @@ const ViewSelector: React.FC<ViewSelectorProps> = ({ selectedView, onViewChange 
 
   return (
     <div className="w-full">
-      <h3 className="text-l mb-2 text-center">Choose Viewing Position</h3>
+      <h3 className="text-md mb-2 font-medium text-center">Viewing Positions</h3>
       <div className="flex justify-center space-x-2">
         {views.map((view) => (
           <Button 
