@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Car Configurator Web App 
 
-First, run the development server:
+## Overview 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The objective of this project is to develop a simple web application that allows users to interact with, and customise, a virtual car model. The idea is that, through this web app, users can change various features of the car such as color and wheels, adjust the camera angle to view different perspectives, and toggle between exterior and interior views. These interactions are registered transmitted from the front end via WebSocket (WS) to a backend server. These websocket messages would then be used to  enables live updates of the car model on digital billboards in Out-Of-Home (OOH) advertising campaigns.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup and Deployment 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Using your preferred terminal, take the following steps: 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone Repository: git clone 
+2. Install Dependencies: npm install
+3. Run Development Servers: npm run dev 
+4. Please note that this project has been set up to concurrently start Next.js server on localhost:3000 and WebSocket server on localhost:8080.
+5. Access Application: Open http://localhost:3000 in a web browser to interact with the car configurator.
+6. Monitor WebSocket server reponses logged into your as you alter your choices in the selector 
 
-## Learn More
+## Project Structure 
+
+This project stems from a standard next.js deployment, it differs that, in addition to the next.js server, there is a WebSocket server that has been setup with socket.io 
+
+The structure of the files follow best practices and closely aligns with Next.js standard App router folder structure.
+
+The app itself is a single page app, found in src/app/page.tsx 
+
+It contains a single client component "src/components/car-configurator.tsx"
+
+UI components have been primarily derived from ShadCn and can be seen in "src/components/ui"
+
+All photos and assets can be found in the public folder 
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs) 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The project uses TypeScript, React, Tailwind CSS, Socket.io for the web socket server 
 
-## Deploy on Vercel
+Server-side implementation can be found in ws-server.js (root) and client side in socket.js 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Features
+ 
+* Color Customisation: Users can select from a range of car colors available.
+* Wheel Selection: Option to choose different types and sizes of wheels for the car.
+* Camera Angle Adjustment: Implemented slider functionality to rotate the camera around the car model.
+* Exterior and Interior Views: Toggle switch to alternate between viewing the car's exterior and interior.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Example Websocket reponse
+
+ Car configuration received: {
+ colour: 'Metallic Sunset Orange',
+ wheel: '18" - 2',
+ sliderValue: [ 75 ],
+ interiorView: true
+ }
+
+
+## Additional Notes 
+
+This project demonstrates the integration of frontend user interaction with backend WebSocket communication, enabling real-time updates in a digital billboard environment.
+Future enhancements could include user authentication, configuration saving, and sharing options to enhance user engagement and campaign effectiveness.
