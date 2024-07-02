@@ -57,10 +57,10 @@ const wheels = [
 // managing state 
 
 const CarConfigurator: React.FC = () => {
-    const [selectedColour, setSelectedColour] = useState<string | null>('Black');
+    const [selectedColour, setSelectedColour] = useState<string | null>('Black'); // default colour black 
     const [selectedWheel, setSelectedWheel] = useState<string | null>('16" - 1');
-    const [sliderValue, setSliderValue] = useState<number[]>([50]); // Initial slider value
-    const [interiorView, setInteriorView] = useState<boolean>(false); // Initial interior view state
+    const [sliderValue, setSliderValue] = useState<number[]>([50]); // Initial slider value set to 50
+    const [interiorView, setInteriorView] = useState<boolean>(false); // Initial interior view state set to false 
     const socketRef = useRef(socket);
     
     useEffect(() => {

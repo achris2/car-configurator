@@ -2,7 +2,7 @@ const { createServer } = require("http");
 const { Server } = require("socket.io");
 
 
-// hostname is currently hardcoded, would change to environment variables in production 
+// hostname is currently hardcoded to localhost and wsport 8080, would change to environment variables in production 
 
 const hostname = "localhost";
 const wsPort = 8080;
