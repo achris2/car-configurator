@@ -1,7 +1,7 @@
 
 # Car Configurator Web App 
 
-## Overview 
+## Overview
 
 The objective of this project is to develop a simple web application that allows users to interact with, and customise, a virtual car model. The idea is that, through this web app, users can change various features of the car such as color and wheels, adjust the camera angle to view different perspectives, and toggle between exterior and interior views. These interactions are registered transmitted from the front end via WebSocket (WS) to a backend server. These websocket messages would then be used to  enables live updates of the car model on digital billboards in Out-Of-Home (OOH) advertising campaigns.
 
